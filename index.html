@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>M.P RTO</title>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+          function rto(){
+            axios.get("http://codingshika.com/APP/RTO/rto_superadmin.php")
+            .then(responce=>{
+            console.log(responce.data);
+            document.getElementById("v1").innerHTML=responce.data.posts.no_v_scaned;
+            document.getElementById("v2").innerHTML=responce.data.posts.fine_amt;
+            document.getElementById("v3").innerHTML=responce.data.posts.v_reg;
+            document.getElementById("v4").innerHTML=responce.data.posts.v_reg;
+
+            })       
+          }
+    </script>
+</head>
+<body onload="rto()">
+      <center>
+        <nav  class="navbar bg-dark border-bottom border-body"  data-bs-theme="dark">
+            
+            <div class="container-fluid justify-content-center"> <!--'justify-content' sift content at center in bootstrap-->
+                <!-- for adding logo-->
+                <a class="navbar-brand" href="#">
+                    <img src="logo.jpeg" width="100" height="100" class="d-inline-block align-left" alt="Logo">
+                  </a>
+                  <!--navbar heading-->
+              <a class="navbar-brand"  href="#">RTO Super Admin Dashboard<br>Gwalior, Madhya Pradesh</a>
+        </nav>
+
+
+    
+        <div class="card" style="width: 18rem;">
+            <img src="admin.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Hellow super Admin<br>MP07 Gwalior, Madhya Pradesh.</p>
+              <h1 id="vi"> </h1>
+            </div>
+          </div>
+
+        <br>
+        <br>
+
+            <div class="row">
+                <div class="col-sm-3 ">
+                  <div class="card" style="width: 18rem;" > <!--adjust size of pic as well as its effect on card-->
+                    <img src="scan.jpg" class="card-img-top" alt="..."> <!--add image in card-->
+                    <div class="card-body">
+                      <h5 class="card-title">No. Vehical Scaned</h5>
+                      <p class="card-text"> </p>
+                      <a href="#" class="btn btn-primary" id="v1">00</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card" style="width: 18rem;">
+                    <img src="fine.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Fine Amount(%)</h5>
+                      <p class="card-text"> </p>
+                      <a href="#" class="btn btn-primary" id="v2">0.0%</a>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-sm-3 ">
+                  <div class="card" style="width: 18rem;">
+                    <img src="vehicle_reg.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Vechical Reg</h5>
+                      <p class="card-text"> </p>
+                      <a href="#" class="btn btn-primary" id="v3">00</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card" style="width: 18rem;">
+                    <img src="rto_reg.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">RTO Reg</h5>
+                      <p class="card-text"> </p>
+                      <a href="#" class="btn btn-primary" id="v4">00</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </center>
+</body>
+</html>
